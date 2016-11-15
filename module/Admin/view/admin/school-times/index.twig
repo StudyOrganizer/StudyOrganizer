@@ -1,0 +1,73 @@
+<!-- school overview with verticle menu -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+        <li><a href="{{ url("admin_school_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Overview") }}</a></li>
+				<li><a href="{{ url("add_school") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School") }}</a></li>
+				<hr />
+				<li  class="active"><a href="{{ url("admin_times_list") }}"><i class="fa  fa-clock-o fa-fw"></i> {{ translate("Schools Times") }}</a></li>
+				<li><a href="{{ url("add_school_time") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School Time") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<table id="data-table" class="table table-hover" cellspacing="0" width="100%">
+			<thead>
+			<tr>
+				<th>
+					{{ translate("ID") }}
+				</th>
+				<th>
+					{{ translate("Name") }}
+				</th>
+				<th>
+					{{ translate("Start") }}
+				</th>
+				<th>
+					{{ translate("End") }}
+				</th>
+				<th>
+					{{ translate("School") }}
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			 {% for times in times_array %}
+			<tr>
+				<td>
+					{{ times.getID() }}
+				</td>
+				<td>
+					{{ times.getName() }}
+				</td>
+				<td>
+					{{ times.getStart() | date("h:i") }}
+				</td>
+				<td>
+					{{ times.getEnd()| date("h:i") }}
+				</td>
+				<td>
+          {{ times.getSchool().getName() }}
+				</td>
+			</tr>
+			 {% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- init table -->
+<script>
+$(document).ready(function() {
+    $('#data-table').dataTable( {
+        "language": {
+            "lengthMenu": "{{ translate("Show _MENU_ times per page") }}",
+            "zeroRecords": "{{ translate("No time found") }}",
+            "info": "{{ translate("Showing page _PAGE_ of _PAGES_") }}",
+            "infoEmpty": "{{ translate("Tipp: Click on 'Add Time' to add a course :-)") }}",
+            "infoFiltered": "{{ translate("(filtered from _MAX_ total records)") }}",
+            "search" : "{{ translate("Search") }}"
+        }
+    } );
+} );
+</script>

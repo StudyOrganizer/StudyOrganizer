@@ -1,0 +1,76 @@
+<!-- school overview with verticle menu -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="{{ url("admin_school_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Overview") }}</a></li>
+				<li><a href="{{ url("add_school") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School") }}</a></li>
+				<hr />
+				<li><a href="{{ url("admin_times_list") }}"><i class="fa  fa-clock-o fa-fw"></i> {{ translate("Schools Times") }}</a></li>
+				<li><a href="{{ url("add_school_time") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School Time") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<table id="school-table" class="table table-hover" cellspacing="0" width="100%">
+			<thead>
+			<tr>
+				<th>
+					{{ translate("ID") }}
+				</th>
+				<th>
+					{{ translate("Name") }}
+				</th>
+				<th>
+					{{ translate("Headmaster") }}
+				</th>
+				<th>
+					{{ translate("Student Lead") }}
+				</th>
+				<th>
+					{{ translate("Options") }}
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			 {% for schools in school_array %}
+			<tr>
+				<td>
+					{{ schools.getID() }}
+				</td>
+				<td>
+					{{ schools.getName() }}
+				</td>
+				<td>
+					{{ schools.getHeadmaster().getUser().getFirstName() | raw | convert_encoding('UTF-8', 'ISO-8859-1') }} {{ schools.getHeadmaster().getUser().getLastName() | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}
+				</td>
+				<td>
+					{{ schools.getStudentLead().getUser().getFirstName() | raw | convert_encoding('UTF-8', 'ISO-8859-1')}} {{ schools.getStudentLead().getUser().getLastName() | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}
+				</td>
+				<td>
+					<div class="btn-group" role="group" aria-label="...">
+						<a href="{{ url('edit_school', {'id': schools.getID()}) }}" class="btn btn-default">{{ translate("Edit") }}</a>
+						<a href="{{ url('delete_school', {'id': schools.getID()}) }}" class="btn btn-default">{{ translate("Delete") }}</a>
+					</div>
+				</td>
+			</tr>
+			 {% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- init table -->
+<script>
+$(document).ready(function() {
+    $('#school-table').dataTable( {
+        "language": {
+            "lengthMenu": "{{ translate("Show _MENU_ schools per page") }}",
+            "zeroRecords": "{{ translate("No Schools found") }}",
+            "info": "{{ translate("Showing page _PAGE_ of _PAGES_") }}",
+            "infoEmpty": "{{ translate("Tipp: Click on 'Add School' to add a school :-)") }}",
+            "infoFiltered": "{{ translate("(filtered from _MAX_ total records)") }}",
+            "search" : "{{ translate("Search") }}"
+        }
+    } );
+} );
+</script>

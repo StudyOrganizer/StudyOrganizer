@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-10">
+        <ol class="breadcrumb">
+            <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+            <li><a href="{{ url("studentui_documents") }}">{{ translate("Documents") }}</a></li>
+            <li class="active"><a href="{{ url("studentui_document_text_view", {"id":document.getId()}) }}">{{ document.getTitle() }}</a></li>
+        </ol>
+    </div>
+    <div class="col-md-2">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ translate("Options") }} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="{{ url("studentui_document_share", {"id":document.getId()}) }}">{{ translate("Share") }}</a></li>
+                <li><a href="{{ url("studentui_document_text_edit", {"id":document.getId()}) }}">{{ translate("Edit") }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    {{ content | raw }}
+
+    <br /><br />
+    {% if document.getDocumentFile is not empty %} <a class="btn btn-default" href="{{ url("studentui_document_pdf_view", {"id":document.getId()}) }}">{{ translate("View File") }}</a> {% endif %}
+</div>

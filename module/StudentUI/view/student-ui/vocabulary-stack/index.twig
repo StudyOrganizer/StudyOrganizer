@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-4">
+		<ol class="breadcrumb">
+		  <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+		  <li class="active"><a href="{{ url("studentui_vocabularies") }}">{{ translate("Vocabulary") }}</a></li>
+		</ol>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+		<div class="btn-group pull-right">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    {{ translate("New") }} <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu">
+		    <li><a href="{{ url("voc_stack_new") }}">{{ translate("Vocabulary Stack") }}</a></li>
+		  </ul>
+		</div>
+  </div>
+</div>
+{% if 1 == 1 %}
+    <div class="alert alert-info" role="alert">
+        Willkommen bei Studyorganizer! <br />
+        <br />
+        <br />
+        Du hast dich das erste mal bei uns angemeldet :D
+        Wir sind da zu helfen. <br />
+
+        Das sind deine Todos: <br />
+        * Ändere dein Passowort <br />
+        * Gebe deinen aktuellen Stundenplan an <br />
+        * Gibt uns deine Fähigkeiten <br /> <br /> <br />
+
+
+        => Wir auf Twitter #wearestudyorganizer <br />
+        => Wir auf Facebook www.facebook.com/thestudyorganizergroup <br />
+        => Wir auf Instragram www.instagram.com <br />
+    </div>
+{% endif %}
+<Legend>{{ translate("Overview") }}</Legend>
+{% if vocabulary is empty %}
+<p style="text-align:center;"><i class="fa fa-th-list fa-5x"></i></p>
+{% else %}
+    <table class="table table-bordered">
+    {% for voc in vocabulary %}
+    <tr>
+           <td>
+                   {{ voc.getID() }}
+           </td>
+           <td>
+                   {{ voc.getName() }}
+           </td>
+           <td>
+                   {% if voc.getShare().getPublic()%}<i class="fa fa-globe"></i>{% endif %}
+           </td>
+           <td>
+                   <div class="btn-group pull-right" role="group" aria-label="...">
+                           <a href="{{ url('studentui_view_vocabularies', {'id': voc.getID()}) }}" class="btn btn-default">{{ translate("Vocabularies") }}</a>
+                           <a href="{{ url('delete_school', {'id': voc.getID()}) }}" class="btn btn-default">{{ translate("Delete") }}</a>
+                   </div>
+           </td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+    

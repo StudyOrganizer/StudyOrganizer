@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-4">
+		<ol class="breadcrumb">
+		  <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+		  <li><a href="{{ url("studentui_vocabularies") }}">{{ translate("Vocabulary") }}</a></li>
+                  <li class="active"><a href="{{ url("studentui_vocabularies") }}">{{ translate("Stack") }}</a></li>
+		</ol>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ translate("New") }} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="{{ url("voc_new", {"id":stack_id}) }}">{{ translate("Vocabulary") }}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<Legend>{{ translate("Vocabularies") }}</Legend>
+{% if voc is empty %}
+     <p style="text-align:center;"><i class="fa fa-th-list fa-5x"></i></p>
+{% else %}
+        <table class="table table-bordered">
+        <tr>
+            <form action="{{ this.getInstance().getRequest().getRequestUri() }}" method="POST">
+                {% for i in 0..size-1 %}
+                    <td><input type="text" name="title{{ i }}" required class="form-control" value="{{ header.getVocStack()[i].getTitle() }}"></td>
+                {% endfor %}
+                <th><input type="submit" class="btn btn-default" value="{{ translate("Change") }}" /></th>
+            </form>
+        </tr>
+        {% for keys, vocs in voc %}
+        <tr>
+            {% for i in 1..size %}
+            <td>{{ vocs.getVoc()[i].getContent() }}</td>
+            {% endfor %}
+            <td>EMPTY</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+    

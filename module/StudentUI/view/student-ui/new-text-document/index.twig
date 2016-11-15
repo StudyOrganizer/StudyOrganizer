@@ -1,0 +1,33 @@
+{{ headScript().appendFile(basePath('/js/third-party/ckeditor.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/config_desc.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-multiselect.js','text/javascript'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-multiselect.css'))|raw }}
+
+<ol class="breadcrumb" xmlns="http://www.w3.org/1999/html">
+  <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+  <li class="active"><a href="{{ url("studentui_documents") }}">{{ translate("Documents") }}</a></li>
+  <li class="active"><a href="{{ url("studentui_document_text_new") }}">{{ translate("New Text Document") }}</a></li>
+</ol>
+                
+<form method="POST">
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon2">{{ translate("Titel") }}</span>
+        <input type="text" name="titel" required class="form-control" value=""></td>
+    </div>
+    <br/>
+    <textarea name="content" id="editor">
+    </textarea> <br />
+    <div class="pull-left">
+        <a class="btn btn-default" href="{{ url("studentui_documents") }}">{{ translate("Cancel") }}</a>
+    </div>
+    <div class="pull-right">
+        <input type="submit" class="btn btn-default" value="{{ translate("Safe") }}" />
+    </div>
+    <br/>
+</form>
+<script>
+    CKEDITOR.replace("editor", {
+        extraPlugins: 'bbcode,entities',
+        height : 500
+    });
+</script>

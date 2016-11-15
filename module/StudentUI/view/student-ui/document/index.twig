@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-10">
+        <ol class="breadcrumb">
+            <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+            <li class="active"><a href="{{ url("studentui_calendar") }}">{{ translate("Documents") }}</a></li>
+        </ol>
+    </div>
+    <div class="col-md-2">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ translate("New") }} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="{{ url("studentui_document_text_new") }}">{{ translate("Text Document") }}</a></li>
+                <li><a href="{{ url("studentui_document_upload") }}">{{ translate("Upload") }}</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="list-group">
+            <a href="{{ url("studentui_documents") }}" class="list-group-item active">{{ translate("My Documents") }}</a>
+        </div>
+    </div>
+    <div class="col-md-8">
+            {% if pagedContent is empty %}
+                <p style="text-align:center;"><i class="fa fa-th-list fa-5x"></i></p>
+            {% else %}
+                <div class="list-group">
+                {% for doc in pagedContent %}
+                <a href="{{ url("studentui_document_text_view", {"id":doc.getId()}) }}" class="list-group-item">{{ doc.getTitle() }} {% if doc.getDocumentFile is not empty %} <span class="label label-default">PDF</span> {% endif %}<div class="pull-right"><i class="fa fa-external-link"></i></div></a>
+                {% endfor %}
+                </div>
+            {% endif %}
+            <nav class="pagination">
+                {{ PaginatorHelper(pagedContent, page, "/ui/documents", 10) }}
+            </nav>
+    </div>
+</div>

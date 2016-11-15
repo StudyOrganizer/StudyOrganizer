@@ -1,0 +1,37 @@
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-multiselect.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-datepicker.min.js','text/javascript'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-multiselect.css'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-datepicker3.min.css'))|raw }}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+            <li><a href="{{ url("studentui_vocabularies") }}">{{ translate("Vocabulary") }}</a></li>
+            <li class="active"><a href="{{ url("voc_new", {"id": "1"}) }}">{{ translate("New Vocabulary") }}</a></li>
+        </ol>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+<Legend>{{ translate("General") }}</Legend>
+<form action="{{ this.getInstance().getRequest().getRequestUri() }}" method="POST">
+        {% for i in 1..count %}
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">{{ header.getVocStack()[i-1].getTitle() }}</span>
+                <input type="text" name="voc{{ i }}" required class="form-control" value=""></td>
+            </div> <br />
+        {% endfor %}
+    <br />
+    <div class="pull-left">
+        <a class="btn btn-default" href="{{ url("studentui_vocabularies") }}">{{ translate("Cancel") }}</a>
+    </div>
+    <div class="pull-right">
+        <input type="submit" class="btn btn-default" value="{{ translate("Safe") }}" />
+        <input type="submit" class="btn btn-default" value="{{ translate("Safe & New") }}" />
+    </div>
+    <br />
+</form>

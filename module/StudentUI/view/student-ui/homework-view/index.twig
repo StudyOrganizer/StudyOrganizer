@@ -1,0 +1,25 @@
+{% if title == "" %}
+    {{ translate("Homework with ID not found ;(") }}
+{% else %}
+    <div class="row">
+        <div class="col-md-4">
+            <ol class="breadcrumb">
+                <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+                <li><a href="{{ url("studentui_calendar") }}">{{ translate("Calendar") }}</a></li>
+                <li class="active"><a href="{{ url("studentui_view_homework", id) }}">{{  title }}</a></li>
+            </ol>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="btn-group pull-right">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{ translate("Delivery on: ") }} {{ date | date("d.m.Y", "Europe/Berlin") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Legend>{{ title }}</Legend>
+    <p>{{ description | raw }}</p>
+{% endif %}

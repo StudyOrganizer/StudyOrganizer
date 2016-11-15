@@ -1,0 +1,87 @@
+{{ headScript().appendFile(basePath('/js/assets/studentui/dashboard.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-tour.min.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/assets/studentui/dashboard_tour.js','text/javascript'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/assets/studentui/dashboard.css'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-tour.min.css'))|raw }}
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-3">
+    <div class="row">
+         <a href="" >
+           <img style="heigth:200px;display: block; margin-left: auto; margin-right: auto;" src="{{ url("home") }}api/avatar/{{ avatar }}/200" alt="..." class="img-thumbnail">
+         </a>
+         <div style="text-align: center;">
+            <h4>{{ firstname  | raw | convert_encoding('UTF-8', 'ISO-8859-1')}} {{ lastname | raw | convert_encoding('UTF-8', 'ISO-8859-1') }} </h4>
+            <p>{{ aboutme }}</p>
+            <hr />
+             {% if lead == true %}
+                 <div class="alert alert-success" role="alert"><a href="{{ url("studentui_lead_dashboard") }}">{{ translate("Managment") }}</a></div>
+             {% endif %}
+         </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span onclick="adressGroup('{{ school | raw | convert_encoding('UTF-8', 'ISO-8859-1')  }}');" class="badge"><i class="fa fa-bullhorn"></i></span>
+                <i class="fa fa-building-o"></i>&nbsp; {{ school | raw | convert_encoding('UTF-8', 'ISO-8859-1')  }}
+            </li>
+        </ul>
+        <ul class="list-group">
+        {% for cours in courses  %}
+            <li class="list-group-item">
+                <span onclick="adressGroup('{{ cours.getName() }}');" class="badge"><i class="fa fa-bullhorn"></i></span>
+                <i class="fa fa-bookmark"></i> &nbsp; {{ cours.getName() }}
+            </li>
+        {% endfor %}
+        </ul>
+        {% if homepage != "" %}
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fa fa-map-marker"></i> &nbsp; {{ homepage  | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}
+                </li>
+            </ul>
+        {% endif %}
+        {% if location != "" %}
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fa fa-globe"></i> </i> &nbsp; {{  location | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+  </div>
+  <div class="col-md-9">
+      {% if 1 == 1 %}
+      <div class="alert alert-info" role="alert">
+          Hallo und herzlich willkommen bei StudyOrganizer, <br />
+          schön dass du unser Angebot nutzen möchtest. Du befindest dich hier auf der Startseite, von hier aus kannst du beginnen deinen Schulalltag besser zu organisieren. <br /> <br />
+
+          Bevor du anfängst bitten wir dich, dein Passwort zu ändern. <br />
+          Gehe dafür auf >Einstellungen< in der rechten oberen Ecke. <br /> <br /> Außerdem muss unsere Software wissen wie dein Schultag aufgebaut ist um dir beim planen zu helfen, trage dazu bitte als zweites deinen Stundenplan unter dem oben genannten Reiter >Kallender< ein. <br /> <br /> <br /> Wir hoffen StudyOrganizer erleichtert deinen Schul- und Lernalltag, dein SO-Team
+      </div>
+      {% endif %}
+
+    {% if mute == true %}
+        <div class="alert alert-info" role="alert">{{ translate("You are muted. You can´t post anykind of message") }}</div>
+    {% else %}
+        <textarea class="span4" style="width:100%;" id="message" onkeyup="countChar(this)" name="message"
+                  placeholder="{{ translate("Type in your message") }}" rows="3"></textarea> <br />
+        <h6 class="pull-right"><div style="display:inline;" id="counter">350</div> {{ translate("characters remaining") }}</h6>
+        <button class="btn btn-info" onClick="postAction()" type="submit">{{ translate("Post") }}</button>
+        <br />
+    {% endif %}
+    <div>
+        <div id="loading" style="text-align: center;">
+            <br />
+            <img src="{{ basePath() }}/img/assets/loading.gif" />
+            <br />
+            <br />
+        </div>
+
+        <div id="cards">
+            <br />
+        </div>
+  </div>
+</div>
+</div>
+</div>

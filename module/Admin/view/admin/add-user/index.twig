@@ -1,0 +1,172 @@
+{{ headLink().appendStylesheet(basePath('/css/assets/adminui/adduser.css'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-multiselect.css'))|raw }}
+
+{{ headScript().appendFile(basePath('/js/assets/adminui/adduser.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-multiselect.js','text/javascript'))|raw }}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+         		<li><a href="{{ url("admin_user_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("User") }}</a></li>
+       			<li class="active"><a href="{{ url("add_user") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add User") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div class="wizard" style="margin-top:-35px;">
+			            <div class="wizard-inner">
+			                <div class="connecting-line"></div>
+			                <ul class="nav nav-tabs" role="tablist">
+			                    <li role="presentation" class="{% if step > 1 %}complete{% elseif step == 1 %}active{% else %}disabled{% endif %}">
+			                        <a href="#step1" aria-controls="step1" role="tab" title="Step 1">
+			                            <span class="round-tab">
+			                                <i class="glyphicon glyphicon-user"></i>
+			                            </span>
+			                        </a>
+			                    </li>
+
+			                    <li role="presentation" class="{% if step > 2 %}complete{% elseif step == 2 %}active{% else %}disabled{% endif %}">
+			                        <a href="#step2" aria-controls="step2" role="tab" title="Step 2">
+			                            <span class="round-tab">
+			                                <i class="glyphicon glyphicon-pencil"></i>
+			                            </span>
+			                        </a>
+			                    </li>
+			                    <li role="presentation" class="{% if step > 3 %}complete{% elseif step == 3 %}active{% else %}disabled{% endif %}">
+			                        <a href="#step3"  aria-controls="step3" role="tab" title="Step 3">
+			                            <span class="round-tab">
+			                                <i class="glyphicon glyphicon-list"></i>
+			                            </span>
+			                        </a>
+			                    </li>
+
+			                    <li role="presentation" class="{% if step > 4 %}complete{% elseif step == 4 %}active{% else %}disabled{% endif %}">
+			                        <a href="#complete"  aria-controls="complete" role="tab" title="Complete">
+			                            <span class="round-tab">
+			                                <i class="glyphicon glyphicon-ok"></i>
+			                            </span>
+			                        </a>
+			                    </li>
+			                </ul>
+			            </div>
+
+						{%if error != "" %}
+						<br />
+						<br />
+						<div class="alert alert-danger" role="alert">{{ error }}</div>
+						{% endif %}
+
+						{% if step == 1 %}
+			            <form role="form" method="POST">
+			                <div class="tab-content">
+			                    <div class="tab-pane active" role="tabpanel" id="step1">
+									<div class="input-group">
+									  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+									  <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="basic-addon1" id="username">
+									</div>
+									<br />
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+										<input type="text" class="form-control" name="firstname" placeholder="Firstname" aria-describedby="basic-addon1" id="firstname">
+									</div>
+									<br />
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+										<input type="text" class="form-control" name="lastname" placeholder="Lastname" aria-describedby="basic-addon1" id="lastname">
+									</div>
+									<br />
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+										<input type="email" class="form-control" name="email" placeholder="Email" aria-describedby="basic-addon1" id="email">
+									</div>
+									<br />
+									<hr />
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i class="fa fa-balance-scale"></i></span>
+										<select id="permission" name="permission">
+											{% for key, permission in permission_array %}
+											<option value="{{ key }}">{{ permission }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<br />
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1"><i class="fa fa-balance-scale"></i></span>
+										<select id="typ" name="typ">
+											{% for typ in typ_array %}
+											<option value="{{ typ }}">{{ typ }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<br />
+									<ul class="list-inline pull-right">
+                                        <li><input type="submit" class="btn btn-primary next-step" value="{{ translate("Save and continue") }}"></input></li>
+									</ul>
+			                    </div>
+			                </div>
+			            </form>
+						{% elseif step == 2 %}
+							 {% if typ == "Student" %}
+							 <br />
+							 <br />
+                             <form role="form" method="POST" data-toggle="validator">
+                                <select id="cours" name="cours&#x5B;&#x5D;" multiple="multiple">
+                                        {% for key,cours in cours_array %}
+                                        <option value="{{ key }}">{{ cours }}</option>
+                                        {% endfor %}
+                                </select>
+                                <br />
+                                <input type="hidden" name="step_progress" value="2_progress" />
+                                <br />
+                                <ul class="list-inline pull-right">
+                                    <li><input type="submit" class="btn btn-primary next-step" value="{{ translate("Save and continue") }}"></input></li>
+                                </ul>
+							 </form>
+                             {% endif %}
+
+						{% elseif step == 3 %}
+						<br />
+
+					   <table class="table" style="text-align:center;">
+					      <tr>
+					        <th>{{ translate("Entry") }}</th>
+					        <th>{{ translate("Value") }}</th>
+					      </tr>
+					      <tr>
+					        <td>{{ translate("Username") }}</td>
+        					<td>{{ username }}</td>
+					       </tr>
+					       <tr>
+					        <td>{{ translate("Firstname") }}</td>
+        					<td>{{ firstname }}</td>
+					       </tr>
+					       <tr>
+					       	<td>{{ translate("Lastname") }}</td>
+					      	<td>{{ lastname }}</td>
+					       </tr>
+        					<td>{{ translate("E-Mail") }}</td>
+        					<td>{{ email }}</td>
+					      </tr>
+					    </table>
+					    <br />
+					    <Legends>{{ translate("Options") }}</Legends>
+    			        <form role="form" method="POST" data-toggle="validator">
+    			        	<input type="checkbox" name="email_opt" value="email">{{ translate("Send details via E-Mail to user") }}<br>
+							<input type="hidden" name="step_progress" value="3_progress" />
+			                <div class="tab-content">
+			                    <div class="tab-pane active" role="tabpanel" id="step1">
+									<ul class="list-inline pull-right">
+											<li><input type="submit" class="btn btn-primary next-step" value="Confirm and create user"></input></li>
+									</ul>
+			                    </div>
+			                </div>
+			            </form>
+						{% elseif step == 4 %}
+                            <div class="well" style="text-align: center;">
+                                {{ translate("Success -> User password is ") }} {{ password }}
+                            </div>
+						{% endif %}
+			        </div>
+		</div>
+	</div>
+</div>

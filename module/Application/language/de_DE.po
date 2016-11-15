@@ -1,0 +1,753 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: StudyOrganizer\n"
+"POT-Creation-Date: 2015-09-20 21:56+0200\n"
+"PO-Revision-Date: 2016-04-05 19:28+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ../Projekte/StudyOrganizer\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: translate;addMessage\n"
+"Last-Translator: \n"
+"Language: de\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: vendor\n"
+"X-Poedit-SearchPathExcluded-1: user_data\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:22
+msgid "Error :-( First you have to add a school."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:29
+msgid "Error :-( First you have to add a cours group."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:116
+msgid "Success :-) cours added -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:118
+msgid "Error :-( coursname is already used, please provide a valid coursname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:121
+msgid "Error :-( coursname is too long, please provide a valid coursname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:124
+msgid "Error :-( coursname is too short, please provide a valid coursname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursController.php:127
+msgid "Error :-( coursname is empty, please provide a valid coursname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:16
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:17
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:19
+msgid "Do not assign a lead student"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:81
+msgid "Success :-) cours group added -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:83
+msgid "Error :-( cours group name is already used, please provide a valid cours group name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:86
+msgid "Error :-( cours group name is too long, please provide a valid cours group name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:89
+msgid "Error :-( cours group name is too short, please provide a valid cours group name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddCoursGroupController.php:92
+msgid "Error :-( cours group name is empty, please provide a valid cours group name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddPermissionController.php:128
+msgid "Success :-) Permission added -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddPermissionController.php:132
+msgid "Error :-( Permissionname is already used, please provide a valid name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddPermissionController.php:135
+msgid "Error :-( Permissionname is too long, please provide a valid name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddPermissionController.php:138
+msgid "Error :-( Permissionname is too short, please provide a valid name."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:18
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:20
+msgid "Do not assign a headmaster"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:89
+msgid "Success :-) School added -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:91
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:91
+msgid "Error :-( Schoolname is already used, please provide a valid schoolname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:94
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:94
+msgid "Error :-( Schoolname is too long, please provide a valid schoolname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:97
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:97
+msgid "Error :-( Schoolname is too short, please provide a valid schoolname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolController.php:100
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:100
+msgid "Error :-( Schoolname is empty, please provide a valid schoolname."
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolTimeController.php:66
+#: module/Admin/src/Admin/Controller/AddSubjectController.php:69
+msgid "Complete"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddSchoolTimeController.php:70
+#: module/Admin/src/Admin/Controller/AddSubjectController.php:73
+msgid "Error :-( Please supply everything"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/AddUserController.php:124
+msgid "Teacher"
+msgstr "Lehrer"
+
+#: module/Admin/src/Admin/Controller/AddUserController.php:125
+msgid "Just User"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/DeleteSchoolController.php:19
+msgid "Success :-) School deleted -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/DeleteSchoolController.php:23
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:45
+msgid "Error :-( School not found, please provide a valid id"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/EditSchoolController.php:89
+msgid "Success :-) School edited -> "
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/LoginController.php:52
+msgid "You dont have the permission to access the AdminUI"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/LoginController.php:56
+#: module/Application/src/Application/Controller/LoginController.php:67
+msgid "You dont have the permission to login"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/LoginController.php:60
+#: module/Application/src/Application/Controller/LoginController.php:71
+msgid "Check your details, the provided password is wrong"
+msgstr ""
+
+#: module/Admin/src/Admin/Controller/LoginController.php:64
+#: module/Application/src/Application/Controller/LoginController.php:75
+msgid "Check your details, the user doesnt exist"
+msgstr ""
+
+#: module/Admin/src/Admin/Service/AdminUIPermissionService.php:27
+msgid "Sorry Guy, you don't have the permission to access AdminUI"
+msgstr ""
+
+#: module/Application/src/Application/Controller/LoginController.php:63
+msgid "You dont have the permission to access the StudentUI"
+msgstr ""
+
+#: module/SetUPManager/src/SetUPManager/Controller/SetUPWelcomeController.php:94
+msgid "[MAIN] Error :-( Please supply everything"
+msgstr ""
+
+#: module/SetUPManager/src/SetUPManager/Controller/SetUPWelcomeController.php:132
+msgid "[DB] Error :-( Please supply everything"
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/AddTimeTableController.php:226
+msgid "Success"
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/AddTimeTableController.php:228
+msgid "The name is already taken :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/AddTimeTableController.php:231
+msgid "The name is not valid :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:70
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:95
+msgid "Settings changed"
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:72
+msgid "Error :-( The new password is too short :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:75
+msgid "Error :-( The passwords doesnt match :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:98
+msgid "Error :-( You dont have the needed permission to do this :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:101
+msgid "Error :-( Current password is wrong :("
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Controller/SettingsController.php:104
+msgid "Error :-( Current password is required"
+msgstr ""
+
+#: module/StudentUI/src/StudentUI/Service/StudentUIPermissionService.php:26
+msgid "Sorry Guy, you don't have the permission to access StudentUI"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:3
+msgid "Welcome to AdminUI. Be careful with changes"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:13
+msgid "User"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:26
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:28
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:40
+msgid "Courses"
+msgstr "Kurse"
+
+#: module/Admin/view/admin/dashboard/index.phtml:39
+msgid "Schools"
+msgstr "Schulen"
+
+#: module/Admin/view/admin/dashboard/index.phtml:55
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:28
+msgid "Permissions"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:68
+msgid "Subjects"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:81
+msgid "Tests"
+msgstr ""
+
+#: module/Admin/view/admin/dashboard/index.phtml:97
+#: module/Application/view/layout/layout.phtml:50
+#: module/StudentUI/view/layout/studentui.phtml:50
+msgid "Documents"
+msgstr "Dokumente"
+
+#: module/Admin/view/admin/dashboard/index.phtml:110
+#: module/Application/view/layout/layout.phtml:51
+msgid "Vocabulary"
+msgstr "Vokabeln"
+
+#: module/Admin/view/admin/dashboard/index.phtml:123
+#: module/StudentUI/view/layout/studentui.phtml:61
+#: /tmp/cache/55ff0f64ad6c7/6/b/6b5c38078c21c89bdf1192682c3f2a0bd00a62bcd958c2af74caa4b6063001c4.php:28
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: module/Admin/view/layout/layout.phtml:51
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: module/Admin/view/layout/layout.phtml:53
+msgid "Fast Access"
+msgstr "Schneller Zugriff"
+
+#: module/Admin/view/layout/layout.phtml:55
+msgid "Show User"
+msgstr "Zeige Benutzer"
+
+#: module/Admin/view/layout/layout.phtml:57
+msgid "Add User"
+msgstr "Erstelle einen Benutzer"
+
+#: module/Admin/view/layout/layout.phtml:65
+#: module/StudentUI/view/layout/studentui.phtml:58
+msgid "My Account"
+msgstr "Mein Account"
+
+#: module/Admin/view/layout/layout.phtml:68
+#: module/StudentUI/view/layout/studentui.phtml:62
+msgid "Logout"
+msgstr "Abmelden"
+
+#: module/Application/view/error/404.phtml:1
+msgid "A 404 error occurred"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:10
+msgid "The requested controller was unable to dispatch the request."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:13
+msgid "The requested controller could not be mapped to an existing controller class."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:16
+msgid "The requested controller was not dispatchable."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:19
+msgid "The requested URL could not be matched by routing."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:22
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr ""
+
+#: module/Application/view/error/404.phtml:34
+msgid "Controller"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:41
+#, php-format
+msgid "resolves to %s"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:53
+#: module/Application/view/error/index.phtml:8
+msgid "Additional information"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:56
+#: module/Application/view/error/404.phtml:81
+#: module/Application/view/error/index.phtml:11
+#: module/Application/view/error/index.phtml:36
+msgid "File"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:60
+#: module/Application/view/error/404.phtml:85
+#: module/Application/view/error/index.phtml:15
+#: module/Application/view/error/index.phtml:40
+msgid "Message"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:64
+#: module/Application/view/error/404.phtml:89
+#: module/Application/view/error/index.phtml:19
+#: module/Application/view/error/index.phtml:44
+msgid "Stack trace"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:75
+#: module/Application/view/error/index.phtml:30
+msgid "Previous exceptions"
+msgstr ""
+
+#: module/Application/view/error/404.phtml:109
+#: module/Application/view/error/index.phtml:64
+msgid "No Exception available"
+msgstr ""
+
+#: module/Application/view/error/index.phtml:1
+msgid "An error occurred"
+msgstr ""
+
+#: module/Application/view/layout/layout.phtml:49
+#: module/StudentUI/view/layout/studentui.phtml:48
+msgid "Home"
+msgstr ""
+
+#: module/Application/view/layout/layout.phtml:52
+#: module/StudentUI/view/layout/studentui.phtml:52
+msgid "Help"
+msgstr "Hilfe"
+
+#: module/Application/view/layout/layout.phtml:55
+msgid "Sign In"
+msgstr "Anmelden"
+
+#: module/SetUPManager/view/layout/installation_layout.phtml:45
+msgid "Installation of StudyOrganizer"
+msgstr ""
+
+#: module/SetUPManager/view/layout/installation_layout.phtml:51
+msgid "Choose your Language"
+msgstr ""
+
+#: module/SetUPManager/view/layout/installation_layout.phtml:54
+msgid "German"
+msgstr "Deutsch"
+
+#: module/SetUPManager/view/layout/installation_layout.phtml:55
+msgid "English"
+msgstr "Englisch"
+
+#: module/StudentUI/view/layout/studentui.phtml:49
+msgid "Calendar"
+msgstr "Kalendar"
+
+#: module/StudentUI/view/layout/studentui.phtml:51
+msgid "Vocabularies"
+msgstr "Vokabeln"
+
+#: /tmp/cache/55ff0f64ad6c7/6/b/6b5c38078c21c89bdf1192682c3f2a0bd00a62bcd958c2af74caa4b6063001c4.php:34
+msgid "About StudyOrganizer"
+msgstr "Über StudyOrganizer"
+
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:34
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:46
+msgid "Add Cours"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:47
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:59
+msgid "Add Cours Group"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:34
+msgid "Add Permission"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:34
+msgid "Add School"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:47
+msgid "Add School Time"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:110
+msgid "Allow to access AdminUI"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:176
+msgid "Allow to access StudentUI"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:154
+msgid "Allow to access TeacherUI"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:132
+msgid "Allow to access mod area"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:252
+msgid "Allow to comment internal documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:230
+msgid "Allow to comment private documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:274
+msgid "Allow to comment public documments"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:374
+msgid "Allow to create a t-account document"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:352
+msgid "Allow to create a text document"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:318
+msgid "Allow to create internal documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:296
+msgid "Allow to create private documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:340
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:362
+msgid "Allow to create public documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:308
+msgid "Allow to delete any user"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:186
+msgid "Allow to delete internal documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:286
+msgid "Allow to delete internal users"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:264
+msgid "Allow to delete own user-account"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:164
+msgid "Allow to delete private documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:208
+msgid "Allow to delete public documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:98
+msgid "Allow to edit documents private"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:120
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:142
+msgid "Allow to edit internal documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:88
+msgid "Allow to login"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:220
+msgid "Allow to update own profile"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:198
+msgid "Allow to update private documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:242
+msgid "Allow to update profile from other user"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:330
+msgid "Allow to upload documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:396
+msgid "Allow to view internal documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:384
+msgid "Allow to view own document"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:406
+msgid "Allow to view public documents"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:64
+msgid "Cours Group Name"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:41
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:53
+msgid "Cours Groups"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:73
+msgid "Cours lead can access permission"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:76
+msgid "Coursname"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:28
+msgid "Overview"
+msgstr "Überblick"
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:41
+msgid "School Times"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:64
+msgid "Schoolname"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:84
+msgid "Select Cours Group"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:80
+msgid "Select Headmaster"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/2/4/24d9155b5166adc28f24710fb7799a54706cf9bcb57198bf1ca38442fc1071df.php:72
+msgid "Select Lead Student"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/0/3/03d3e758fe734d20c394385eca1fbd3f6a21517002f4d9ac16216279752aee13.php:92
+msgid "Select School"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/c/7/c7ddf9ba7d87e68cb8d53d999f8d763b96ef742a7807ce4a0c615b00f637e3c5.php:72
+msgid "Select Student Lead"
+msgstr ""
+
+#: /tmp/cache/55ff0f64ad6c7/7/8/78543c534e1634621b5a880650da726aba456bd286f279079bb648ccabde0827.php:63
+msgid "Student lead can access permission"
+msgstr ""
+
+msgid "Will be written on: "
+msgstr "Wird geschrieben am: "
+
+msgid "Monday"
+msgstr "Montag"
+
+msgid "Tuesday"
+msgstr "Dienstag"
+
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+msgid "Thursday"
+msgstr "Donnerstag"
+
+msgid "Friday"
+msgstr "Freitag"
+
+msgid "Saturday"
+msgstr "Samstag"
+
+msgid "Post"
+msgstr "Schreiben"
+
+msgid "Type in your message"
+msgstr "Gebe deine Nachricht ein"
+
+msgid "Time"
+msgstr "Zeit"
+
+msgid "New"
+msgstr "Neu"
+
+msgid "Timetable"
+msgstr "Stundenplan"
+
+msgid "Test"
+msgstr "Klausur"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "General"
+msgstr "Allgemein"
+
+msgid "New Homework"
+msgstr "Hausaufgaben hinzufügen"
+
+msgid "Add Homework"
+msgstr "Hausaufgaben hinzufügen"
+
+msgid "What is given?"
+msgstr "Was genau wurde aufgegeben?"
+
+msgid "Wich book page?"
+msgstr "Welche Buchseiten sind relevant?"
+
+msgid "Something extra to mention?"
+msgstr "Ist etwas extra zu erwähnen?"
+
+msgid "Subject"
+msgstr "Fach"
+
+msgid "I am good"
+msgstr "Ich bin gut"
+
+msgid "I am not so good"
+msgstr "Es geht einigermaßen"
+
+msgid "I am bad"
+msgstr "Ich bin schlecht"
+
+msgid "Skills"
+msgstr "Fähigkeiten"
+
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+msgid "Devices"
+msgstr "Geräte"
+
+msgid "This module will be released soon"
+msgstr "Dieses Modul wird in Kürze zur Verfügung stehen."
+
+msgid "Homework"
+msgstr "Hausaufgabe"
+
+msgid "Homeworks"
+msgstr "Hausaufgaben"
+
+msgid "Whats the topic?"
+msgstr "Welches Thema ist relevant?"
+
+msgid "New Test"
+msgstr "Neue Klausur"
+
+msgid "Managment"
+msgstr "Verwaltung"
+
+msgid "Welcome to ManagementUI. Be careful with changes"
+msgstr "Willkommen in der Verwaltung. Bitte sei vorsichtig mit Änderungen"
+
+msgid "Introduction"
+msgstr "Einleitung"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Safe"
+msgstr "Speichern"
+
+msgid "Safe & New"
+msgstr "Speichern & Erstellen"
+
+msgid "Change"
+msgstr "Ändern"
+
+msgid "Password (you need your current password to change settings)"
+msgstr "Passwort (Du benötigst dein aktuelles Passwort um Einstellungen zu verändern)"
+
+msgid "Current Password"
+msgstr "Aktuelles Passwort"
+
+msgid "New Password"
+msgstr "Neues Passwort"
+
+msgid "Retry New Password"
+msgstr "Wiederholung des neuen Passwortes"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "New Vocabulary"
+msgstr "Neue Vokabel"
+
+msgid "Vocabulary Stack"
+msgstr "Vokabelstapel"
+
+msgid "Stack"
+msgstr "Stapel"
+
+msgid "characters remaining"
+msgstr "Zeichen verbleiben"
+
+msgid "My Documents"
+msgstr "Meine Dokumente"
+
+msgid "Public Documents"
+msgstr "Öffentliche Dokumente"

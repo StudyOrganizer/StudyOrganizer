@@ -1,0 +1,189 @@
+<!-- add school -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="{{ url("admin_permissions_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Permissions") }}</a></li>
+				<li class="active"><a href="{{ url("add_permission") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add Permission") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div style="text-align:center;">
+				<i class="fa fa-bolt fa-5x"></i>
+				<br/>
+				<br/>
+				{{ form().prepare() }} {{ form().openTag(form)|raw }}
+				<label>{{ translate("Name") }}</label>
+				{{ formRow(form.get('name')) }} <br/><br/>
+				<b>Option List</b> <br />
+				<table class="table" style="text-align:left;">
+					<tr>
+						<td>
+							<label>{{ translate("Student lead can access permission") }}</label> <br/>
+							{{ formRow(form.get('ACCESS_FROM_STUDENT_LEAD')) }}
+						</td>
+						<td>
+							<label>{{ translate("Cours lead can access permission") }}</label> <br/>
+							{{ formRow(form.get('ACCESS_FROM_COURS_LEAD')) }}
+						</td>
+					</tr>
+				</table>
+				<b>Permission List</b>
+				<table class="table" style="text-align:left;">
+					<tr>
+						<td>
+							<label>{{ translate("Allow to login") }}</label> <br/>
+							{{ formRow(form.get('CAN_LOGIN')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to edit private documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_EDIT_DOCUMENT_PRIVATE')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to access AdminUI") }}</label> <br/>
+							{{ formRow(form.get('CAN_ACCESS_ADMIN_AREA')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to edit internal documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_EDIT_DOCUMENT_INTERNAL')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to access ModUI") }}</label> <br/>
+							{{ formRow(form.get('CAN_ACCESS_MOD_AREA')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to edit public documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_EDIT_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to access TeacherUI") }}</label> <br/>
+							{{ formRow(form.get('CAN_ACCESS_TEACHER_AREA')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to delete private documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_DELETE_DOCUMENT_PRIVATE')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to access StudentUI") }}</label> <br/>
+							{{ formRow(form.get('CAN_ACCESS_STUDENT_AREA')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to delete internal documents") }}</label>  <br/>
+							{{ formRow(form.get('CAN_DELETE_DOCUMENT_INTERNAL')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to update private documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_UPDATE_PROFILE_PRIVATE')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to delete public documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_DELETE_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to update own profile") }}</label> <br/>
+							{{ formRow(form.get('CAN_UPDATE_PROFILE_INTERNAL')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to comment private documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_COMMENT_DOCUMENT_PRIVATE')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to update profile from other users") }}</label> <br/>
+							{{ formRow(form.get('CAN_UPDATE_PROFILE_PUBLIC')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to comment internal documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_COMMENT_DOCUMENT_INTERNAL')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to delete own user-account.") }}</label> <br/>
+							{{ formRow(form.get('CAN_DELETE_USER_PRIVATE')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to comment public documments") }}</label> <br/>
+							{{ formRow(form.get('CAN_COMMENT_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to delete internal users") }}</label> <br/>
+							{{ formRow(form.get('CAN_DELETE_USER_INTERNAL')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to create private documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_PRIVATE')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to delete any user") }}</label> <br/>
+							{{ formRow(form.get('CAN_DELETE_USER_PUBLIC')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to create internal documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_INTERNAL')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to upload documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_UPLOAD_DOCUMENT')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to create public documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to create a text document") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_TEXT')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to create public documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to create a t-account document") }}</label> <br/>
+							{{ formRow(form.get('CAN_CREATE_DOCUMENT_BWL')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to view own documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_VIEW_DOCUMENT_PRIVATE')) }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>{{ translate("Allow to view internal documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_VIEW_DOCUMENT_INTERNAL')) }}
+						</td>
+						<td>
+							<label>{{ translate("Allow to view public documents") }}</label> <br/>
+							{{ formRow(form.get('CAN_VIEW_DOCUMENT_PUBLIC')) }}
+						</td>
+					</tr>
+				</table>
+
+				{{ formRow(form.get('submit')) }} {{ form().closeTag()|raw }}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+{
+    "name": "rebtsoft/studyorganizer",
+    "description": "StudyOrganizer - Free learning managment plattform",
+    "license": "GPL3",
+    "keywords": [
+        "learning",
+        "free",
+        "so",
+        "studyorganizer"
+    ],
+    "homepage": "https://www.studyorganizer.de",
+    "require": {
+         "php": ">=5.5",
+         "zendframework/zendframework": "2.4.3",
+       	 "zendframework/zend-mvc":"2.4.9",
+         "zf-commons/zfc-twig": "1.2.2",
+         "zendframework/zend-form":"2.4.8",
+         "doctrine/doctrine-orm-module": "0.9.0",
+         "neilime/zf2-twb-bundle": "2.*@stable",
+         "zfcampus/zf-apigility": "1.2.1",
+	     "umpirsky/twig-gettext-extractor": "1.1.*",
+         "dino/dompdf-module": "dev-master",
+	     "mjohnson/decoda" : "6.7.*",
+	      "zfcampus/zf-configuration": "~1.0"
+    },
+    "require-dev": {
+         "zendframework/zftool": "dev-master",
+         "zendframework/zend-developer-tools": "1.0.0",
+         "zfcampus/zf-apigility-admin": "1.2.1",
+         "zfcampus/zf-development-mode": "~2.0"
+    }
+}

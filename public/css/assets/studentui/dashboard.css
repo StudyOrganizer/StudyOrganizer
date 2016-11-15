@@ -1,0 +1,176 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+.panel-card {
+  position: relative;
+  border-radius: 0px;
+  border: 1px solid rgb(216, 216, 216);
+  font-family: 'Roboto', sans-serif;
+}
+.panel-card > .dropdown {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.panel-card > .dropdown > span > span {
+  font-size: 10px;
+}
+.panel-card > .dropdown > .dropdown-menu {
+  left: initial;
+  right: 0px;
+  border-radius: 2px;
+}
+.panel-card > .panel-card-tags {
+  position: absolute;
+  top: 35px;
+  right: -3px;
+}
+.panel-card > .panel-card-tags > ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.panel-card > .panel-card-tags > ul:hover {
+  box-shadow: 0px 0px 3px rgb(0, 0, 0);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+.panel-card > .panel-card-tags > ul > li {
+  display: block;
+  right: 0px;
+  width: 0px;
+  padding: 5px 0px 5px 0px;
+  background-color: rgb(245, 245, 245);
+  font-size: 12px;
+  overflow: hidden;
+}
+.panel-card > .panel-card-tags > ul > li::after {
+  content:"";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  border-right: 3px solid rgb(66, 127, 237);
+}
+.panel-card > .panel-card-tags > ul:hover > li,
+.panel-card > .panel-card-tags > ul > li:first-child {
+  padding: 5px 15px 5px 10px;
+  width: auto;
+  cursor: pointer;
+  margin-left: auto;
+}
+.panel-card > .panel-card-tags > ul:hover > li {
+  background-color: rgb(255, 255, 255);
+}
+.panel-card > .panel-card-tags > ul > li:hover {
+  background-color: rgb(66, 127, 237);
+  color: rgb(255, 255, 255);
+}
+.panel-card > .panel-heading,
+.panel-card > .panel-footer {
+  background-color: rgb(255, 255, 255);
+  border-width: 0px;
+}
+.panel-card > .panel-heading {
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+.panel-card > .panel-heading > img {
+  margin-right: 15px;
+}
+.panel-card > .panel-heading > h3 {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.panel-card > .panel-heading > h5 {
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  font-weight: 400;
+}
+.panel-card > .panel-body {
+  padding-top: 5px;
+  font-size: 13px;
+}
+.panel-card > .panel-body > .panel-card-image {
+  display: block;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(217, 217, 217);
+}
+.panel-card > .panel-body > .panel-card-image > img {
+  max-width: 100%;
+}
+
+.panel-card > .panel-footer {
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 54px;
+}
+.panel-card > .panel-footer > .btn {
+  float: left;
+  margin-right: 8px;
+}
+.panel-card > .panel-footer > .input-placeholder {
+  display: block;
+  margin-left: 98px;
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  font-weight: 400;
+  padding: 8px 6px 7px;
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+}
+.panel-card.panel-card-show-comment > .panel-footer > .input-placeholder {
+  display: none;
+}
+.panel-card > .panel-card-comment {
+  display: none;
+  padding: 10px 20px 15px;
+  border-top: 1px solid rgb(229, 229, 229);
+  background-color: rgb(245, 245, 245);
+}
+.panel-card.panel-card-show-comment > .panel-card-comment {
+  display: block;
+}
+/*.panel-card > .panel-card-comment > img {
+    float: left;   
+}*/
+.panel-card > .panel-card-comment > .panel-card-textarea {
+  float: right;
+  width: calc(100% - 56px);
+}
+.panel-card > .panel-card-comment > .panel-card-textarea > textarea {
+  display: block;
+  /*margin-left: 60px;
+  width: calc(100% - 56px);*/
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(217, 217, 217);
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+  resize: vertical;
+}
+.panel-card > .panel-card-comment > .panel-card-textarea > .btn {
+  margin-top: 10px;
+  margin-right: 8px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .panel-card > .panel-card-comment > .panel-card-textarea > .btn {
+    width: auto;
+  }
+}
+
+
+.panel-card .btn {
+  border-radius: 3px;
+}
+.panel-card .btn-default {
+  border: 1px solid rgb(217, 217, 217);
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+}
+.panel-card .btn-default:hover,
+.panel-card .btn-default:focus,
+.panel-card .btn-default:active {
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(0, 0, 0);
+}

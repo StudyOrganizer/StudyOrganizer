@@ -1,0 +1,26 @@
+<!-- add cours group -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+        <li><a href="{{ url("admin_subjects_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Subjects") }}</a></li>
+				<li  class="active"><a href="{{ url("add_subject") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add Subject") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div style="text-align:center;">
+				<i class="fa fa-list fa-5x"></i>
+				<br/>
+				<br/>
+				{{ form().prepare() }} {{ form().openTag(form)|raw }}
+				<label>{{ translate("Subject Name") }}</label>
+				{{ formRow(form.get('name')) }} <br/><br/>
+				<label>{{ translate("Select Icon") }}</label>
+				{{ formRow(form.get('select')) }} <br/><br/>
+				<label>{{ translate("Select School") }}</label>
+				{{ formRow(form.get('select_school')) }} <br/><br/>
+				{{ formRow(form.get('submit')) }} {{ form().closeTag()|raw }}
+			</div>
+		</div>
+	</div>
+</div>

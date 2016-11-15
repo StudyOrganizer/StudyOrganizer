@@ -1,0 +1,64 @@
+<!-- school overview with verticle menu -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="{{ url("admin_subjects_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Subjects") }}</a></li>
+				<li><a href="{{ url("add_subject") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add Subject") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<table id="school-table" class="table table-hover" cellspacing="0" width="100%">
+			<thead>
+			<tr>
+				<th>
+					{{ translate("ID") }}
+				</th>
+				<th>
+					{{ translate("Name") }}
+				</th>
+				<th>
+					{{ translate("School") }}
+				</th>
+				<th>
+					{{ translate("Icon") }}
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			 {% for subject in subject_array %}
+			<tr>
+				<td>
+					{{ subject.getID() }}
+				</td>
+				<td>
+					{{ subject.getName() | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}
+				</td>
+                <td>
+                    {{ subject.getSchool().getName() }}
+                </td>
+                <td>
+                  <i class="fa {{ subject.getIcon() }}"></i>
+                </td>
+			</tr>
+			 {% endfor %}
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- init table -->
+<script>
+$(document).ready(function() {
+    $('#school-table').dataTable( {
+        "language": {
+            "lengthMenu": "{{ translate("Show _MENU_ subjects per page") }}",
+            "zeroRecords": "{{ translate("No subject found") }}",
+            "info": "{{ translate("Showing page _PAGE_ of _PAGES_") }}",
+            "infoEmpty": "{{ translate("Tipp: Click on 'Add Subject' to add a subject :-)") }}",
+            "infoFiltered": "{{ translate("(filtered from _MAX_ total records)") }}",
+            "search" : "{{ translate("Search") }}"
+        }
+    } );
+} );
+</script>

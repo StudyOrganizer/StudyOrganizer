@@ -1,0 +1,71 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2">
+    <div class="row">
+         <a href="{{ url("studentui_settings_avatar") }}">
+           <img style="heigth:200px;" src="{{ url("home") }}api/avatar/{{ avatar }}/200" alt="..." class="img-thumbnail">
+         </a>
+         <br />
+         <br />
+         <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="{{ url("studentui_settings") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("General") }}</a></li>
+             <li><a href="{{ url("studentui_settings_skills") }}"><i class="fa fa-flask fa-fw"></i> {{ translate("Skills") }}</a></li>
+             <li><a href="{{ url("studentui_settings_notifications") }}"><i class="fa fa-flag fa-fw"></i> {{ translate("Notifications") }}</a></li>
+             <li><a href="{{ url("studentui_settings_devices") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("Devices") }}</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="col-md-10">
+  <form method="POST">
+      <div class="panel panel-danger">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ translate('Password (you need your current password to change settings)') }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+            <label for="current">{{ translate("Current Password") }} *</label>
+            <input type="password" class="form-control" id="current" name="current" placeholder="Current Password">
+            </div>
+            <div class="form-group">
+            <label for="new">{{ translate("New Password") }}</label>
+            <input type="password" class="form-control" id="new" name="new" placeholder="New Password">
+            </div>
+            <div class="form-group">
+            <label for="rnew">{{ translate("Retry New Password") }}</label>
+            <input type="password" class="form-control" name="rnew" id="rnew" placeholder="Retry New Password">
+            </div>
+        </div>
+      </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ translate("General") }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+            <label for="firstname">{{ translate("Firstname") }}</label>
+            <input type="text" class="form-control" name="firstname" id="exampleInputEmail1" value="{{ firstname | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}" placeholder="{{ translate("Firstname") | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}">
+            </div>
+            <div class="form-group">
+            <label for="lastname">{{ translate("Lastname") }}</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" value="{{ lastname | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}" placeholder="{{ translate("Lastname")| raw | convert_encoding('UTF-8', 'ISO-8859-1') }}">
+            </div>
+            <div class="form-group">
+            <label for="about_me">{{ translate("About Me") }}</label>
+            <input type="textfield" class="form-control" name="aboutme" id="about_me" value="{{ aboutme | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}" placeholder="{{ translate("About Me")| raw | convert_encoding('UTF-8', 'ISO-8859-1') }}">
+            </div>
+            <div class="form-group">
+            <label for="location">{{ translate("Location") }}</label>
+            <input type="text" class="form-control" name="location" id="about_me" value="{{ location | raw | convert_encoding('UTF-8', 'ISO-8859-1') }}" placeholder="{{ translate("Location")| raw | convert_encoding('UTF-8', 'ISO-8859-1') }}">
+            </div>
+            <div class="form-group">
+            <label for="website">{{ translate("Website") }}</label>
+            <input type="text" class="form-control" name="website" id="website" value="{{ website }}" placeholder="{{ translate("Website")| raw | convert_encoding('UTF-8', 'ISO-8859-1') }}">
+            </div>
+        </div>
+      </div>
+       <button type="submit" class="btn btn-default">{{ translate("Change") }}</button>
+   </form>
+  </div>
+</div>
+</div>

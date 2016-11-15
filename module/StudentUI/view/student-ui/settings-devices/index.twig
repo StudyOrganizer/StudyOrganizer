@@ -1,0 +1,33 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-2">
+    <div class="row">
+         <a href="{{ url("studentui_settings_avatar") }}">
+           <img style="heigth:200px;" src="{{ url("home") }}api/avatar/{{ avatar }}/200" alt="..." class="img-thumbnail">
+         </a>
+         <br />
+         <br />
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ url("studentui_settings") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("General") }}</a></li>
+            <li><a href="{{ url("studentui_settings_skills") }}"><i class="fa fa-flask fa-fw"></i> {{ translate("Skills") }}</a></li>
+            <li><a href="{{ url("studentui_settings_notifications") }}"><i class="fa fa-flag fa-fw"></i> {{ translate("Notifications") }}</a></li>
+            <li class="active"><a href="{{ url("studentui_settings_devices") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("Devices") }}</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="col-md-10">
+      {% if device_array is empty %}
+          <div class="well" style="text-align:center;">
+              {{ translate("This module will be released soon") }}
+          </div>
+      {% else %}
+          <ul class="list-group">
+              <li class="list-group-item">
+                  <span class="badge">14</span>
+                  Cras justo odio
+              </li>
+          </ul>
+      {% endif %}
+  </div>
+</div>
+</div>

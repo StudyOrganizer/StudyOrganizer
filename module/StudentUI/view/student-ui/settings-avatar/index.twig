@@ -1,0 +1,29 @@
+{{ headScript().appendFile(basePath('/js/third-party/cropper.min.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/assets/adminui/change_avatar.js','text/javascript'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/cropper.min.css'))|raw }}
+
+<div class="container-fluid" id="crop-avatar">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row">
+                <a href="" >
+                    <img style="heigth:200px;display: block; margin-left: auto; margin-right: auto;" src="{{ url("home") }}api/avatar/{{ avatar }}/200" alt="..." class="img-thumbnail">
+                </a>
+                <br />
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="{{ url("studentui_settings") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("General") }}</a></li>
+                    <li><a href="{{ url("studentui_settings_skills") }}"><i class="fa fa-flask fa-fw"></i> {{ translate("Skills") }}</a></li>
+                    <li><a href="{{ url("studentui_settings_notifications") }}"><i class="fa fa-flag fa-fw"></i> {{ translate("Notifications") }}</a></li>
+                    <li><a href="{{ url("studentui_settings_devices") }}"><i class="fa fa-tablet fa-fw"></i> {{ translate("Devices") }}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <form class="avatar-form" action="/api/upload" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="typ" value="avatar">
+                    <input type="file" class="avatar-input" id="avatarInput" name="file">
+                    <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>

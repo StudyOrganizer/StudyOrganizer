@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="col-md-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item active"><?php echo $this->translate("Public Documents"); ?></a>
+      </div>
+    </div>
+    <div class="col-md-8" style="min-height: 300px;">
+      <?php if (empty($this->pagedContent) ) {?>
+        <p style="text-align:center;"><i class="fa fa-th-list fa-5x"></i></p>
+      <?php } else {?>
+        <div class="list-group">
+          <?php foreach($this->pagedContent as $content) {?>
+            <a href="<?php echo $this->url("public_document_text_view", array("id" => $content->getDocument()->getId())); ?>" class="list-group-item"><?php echo $content->getDocument()->getTitle(); ?> <?php if($content->getDocument()->getDocumentFile() != null) { echo "<span class=\"label label-default\">PDF</span>"; } ?><div class="pull-right"><i class="fa fa-external-link"></i></div></a>
+          <?php } ?>
+        </div>
+        <nav>
+            <ul class="pagination">
+      <?php }
+      echo $this->PaginatorHelper($pagedContent, $page, '/documents', 10);
+      ?>
+            </ul>
+        </nav>
+    </div>
+  </div>
+</div>

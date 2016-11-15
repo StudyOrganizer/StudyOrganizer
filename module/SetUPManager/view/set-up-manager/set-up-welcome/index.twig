@@ -1,0 +1,108 @@
+{% if locked == 1 %}
+<p style="text-align:center;">Setup is locked! Please remove SetupManager from module list.</p>
+{% else %}
+<div class="panel panel-default">
+  <div class="panel-body" style="text-align:center;">
+    {{ translate("Welcome to StudyOrganizer!") }}
+  </div>
+</div>
+    
+<br />
+CORE VERSION --> {{ version_core }} <br />
+API VERSION --> {{ version }}
+<hr />
+<p>DEBUG READY CHECK (SELF-HEALTH CHECK)</p>
+<!-- right check -->
+DATA IS WRITABLE -->  {% if data == 1 %}GOOD <i class="fa fa-thumbs-up"></i>{% else %}BAD{% endif %}<br />
+AVATAR DATA IS WRITABLE --> {% if avatars == 1 %}GOOD <i class="fa fa-thumbs-up"></i>{% else %}BAD{% endif %}<br />
+FILES DATA IS WRITABLE --> {% if files == 1 %}GOOD <i class="fa fa-thumbs-up"></i>{% else %}BAD{% endif %}<br />
+<hr />
+<p>CONFIG HEALTH CHECK</p>
+GLOBAL MAIN CONFIGURATION --> {% if global == 1 %}GOOD <i class="fa fa-thumbs-up"></i>{% else %}NEED TO BE CREATED{% endif %}<br />
+DATABASE CONFIGURATION --> {% if database == 1 %}GOOD <i class="fa fa-thumbs-up"></i>{% else %}NEED TO BE CREATED{% endif %}<br />
+<hr />
+<p>CREATE MAIN CONFIGURATION</p>
+<form role="form" method="POST" data-toggle="validator">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+						  <input type="text" class="form-control" name="title" placeholder="Site Title" aria-describedby="basic-addon1" id="title" value="{{ title_v }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="desc" placeholder="Description" aria-describedby="basic-addon1" id="desc" value="{{ desc_v }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="keywords" placeholder="META Keywords" aria-describedby="basic-addon1" id="keywords" value="{{ keywords_v }}">
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="lang" placeholder="Application language e.g en_GB or de_DE" aria-describedby="basic-addon1" id="lang" value="{{ lang }}">
+						</div>
+                    </div>
+                </div>
+<hr />
+<p>CREATE DATABASE CONFIGURATION</p>
+<p>Connection established --> {% if db_i == 1 %}YES{% else %}NO{% endif %}
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+						  <input type="text" class="form-control" name="host" placeholder="Host" aria-describedby="basic-addon1" id="server" value="{{ host }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="port" placeholder="Port" aria-describedby="basic-addon1" id="port" value="{{ port }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="db_name" placeholder="Name" aria-describedby="basic-addon1" id="db_name" value="{{ dbname }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="basic-addon1" id="username" value="{{ dbuser }}">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="password" placeholder="Password" aria-describedby="basic-addon1" id="password" value="{{ dbpassword }}">
+						</div>
+                    </div>
+                </div>
+
+<hr />
+
+<p>CREATE ADMIN USER</p>
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+						<div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+						  <input type="text" class="form-control" name="uusername" placeholder="Username" aria-describedby="basic-addon1" id="uusername">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="firstname" placeholder="Firstname" aria-describedby="basic-addon1" id="firstname">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-database"></i></span>
+							<input type="text" class="form-control" name="lastname" placeholder="Lastname" aria-describedby="basic-addon1" id="lastname">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+							<input type="email" class="form-control" name="email" placeholder="E-Mail" aria-describedby="basic-addon1" id="email">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
+							<input type="password" class="form-control" name="upassword" placeholder="Password" aria-describedby="basic-addon1" id="upassword">
+						</div>
+                    </div>
+                </div>
+<hr />
+<div style="text-align:center;">
+    <input type="submit" class="btn btn-primary btn-block" value="Install"></input> 
+</div>
+<br />
+</form>
+{% endif %}

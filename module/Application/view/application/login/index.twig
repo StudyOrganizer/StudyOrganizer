@@ -1,0 +1,21 @@
+<div style="text-align: center;">
+<img style="height: 150px;" src="{{ basePath("/img/assets/logo.svg")}}" alt="welcome"/>
+</div>
+<div class="row center-form" style="margin-top: 10px;">
+<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+<form role="form" method="POST" action="{{ url("login") }}">
+<h2>{{ translate("Sign In") }}</h2>
+{%if message != "" %}
+		<div class="alert alert-danger" role="alert">{{ message }}</div>
+{% endif %}
+<hr />
+<div class="form-group">
+<input type="text" name="username" id="username" class="form-control input-lg" placeholder="{{ translate("Username" )}}">
+</div>
+<div class="form-group">
+<input type="password" name="password" id="password" class="form-control input-lg" placeholder="{{ translate("Password" )}}">
+</div>
+<input type="submit" class="btn btn-lg btn-default btn-block" value="{{ translate("Sign In") }}">
+</form>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<!-- school overview with verticle menu -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="{{ url("admin_school_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Overview") }}</a></li>
+				<li><a href="{{ url("add_school") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School") }}</a></li>
+				<hr />
+				<li><a href="{{ url("admin_times_list") }}"><i class="fa  fa-clock-o fa-fw"></i> {{ translate("Schools Times") }}</a></li>
+				<li  class="active"><a href="{{ url("add_school_time") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School Time") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+      <div style="text-align:center;">
+          <i class="fa fa-clock-o fa-5x"></i>
+          <br/>
+          <br/>
+          {{ form().prepare() }} {{ form().openTag(form)|raw }} <label>Time associated name</label>
+          {{ formRow(form.get('name')) }} <br/><br/>
+          <label>{{ translate("Leason start at") }}</label> <br />
+          {{ formRow(form.get('start')) }} <br/><br/>
+          <label>{{ translate("Leason end at") }}</label> <br />
+          {{ formRow(form.get('end')) }} <br/><br/>
+          <hr />
+          <label>{{ translate("Select School") }}</label>
+          {{ formRow(form.get('select')) }} <br/><br/>
+          {{ formRow(form.get('submit')) }} {{ form().closeTag()|raw }}
+      </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<!-- add cours group -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="{{ url("admin_courses_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Courses") }}</a></li>
+				<li><a href="{{ url("admin_courses_group_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Groups") }}</a></li>
+				<li><a href="{{ url("add_cours") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add Cours") }}</a></li>
+				<li class="active"><a href="{{ url("add_cours_group") }}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add Cours Group") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div style="text-align:center;">
+				<i class="fa fa-users fa-5x"></i>
+				<br/>
+				<br/>
+				{{ form().prepare() }} {{ form().openTag(form)|raw }}
+				<label>{{ translate("Cours Group Name") }}</label>
+				{{ formRow(form.get('name')) }} <br/><br/>
+				<label>{{ translate("Select Lead Student") }}</label>
+				{{ formRow(form.get('select')) }} <br/><br/>
+				{{ formRow(form.get('submit')) }} {{ form().closeTag()|raw }}
+			</div>
+		</div>
+	</div>
+</div>

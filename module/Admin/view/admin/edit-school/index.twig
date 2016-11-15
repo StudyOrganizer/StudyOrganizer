@@ -1,0 +1,25 @@
+<!-- add school -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="{{ url("admin_school_list") }}"><i class="fa fa-list fa-fw"></i> {{ translate("Overview") }}</a></li>
+				<li><a href="{{ url("add_school")}}"><i class="fa fa-plus fa-fw"></i> {{ translate("Add School") }}</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div style="text-align:center;">
+				<i class="fa fa-building-o fa-5x"></i>
+				<br/>
+				<br/>
+				{{ form().prepare() }} {{ form().openTag(form)|raw }} <label>Schoolname</label>
+				{{ formRow(form.get('name')) }} <br/><br/>
+				<label>{{ translate("Select Lead Student") }}</label>
+				{{ formRow(form.get('select_student_lead')) }} <br/><br/>
+				<label>{{ translate("Select Headmaster") }}</label>
+				{{ formRow(form.get('select_headmaster')) }} <br/><br/>
+				{{ formRow(form.get('submit')) }} {{ form().closeTag()|raw }}
+			</div>
+		</div>
+	</div>
+</div>

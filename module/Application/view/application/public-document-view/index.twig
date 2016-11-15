@@ -1,0 +1,11 @@
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>{{ translate("Public Document") }}</strong> {{ translate("Login to access more features") }}
+</div>
+<br />
+<div class="container-fluid">
+  <h1>{{ document.getTitle() }}</h1>
+  {{ content | raw }}
+  <br /><br />
+  {% if document.getDocumentFile is not empty %} <a class="btn btn-default" href="{{ url("document_pdf_view", {"id":document.getId()}) }}">{{ translate("View File") }}</a> {% endif %}
+</div>

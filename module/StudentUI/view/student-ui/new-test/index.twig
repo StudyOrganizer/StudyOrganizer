@@ -1,0 +1,130 @@
+{{ headScript().appendFile(basePath('/js/third-party/ckeditor.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/assets/studentui/config_add_homework.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-multiselect.js','text/javascript'))|raw }}
+{{ headScript().appendFile(basePath('/js/third-party/bootstrap-datepicker.min.js','text/javascript'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-multiselect.css'))|raw }}
+{{ headLink().appendStylesheet(basePath('/css/third-party/bootstrap-datepicker3.min.css'))|raw }}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li><a href="{{ url("studentui_dashboard") }}">{{ translate("Dashboard") }}</a></li>
+            <li><a href="{{ url("studentui_calendar") }}">{{ translate("Calendar") }}</a></li>
+            <li class="active"><a href="{{ url("studentui_test_new") }}">{{ translate("New Test") }}</a></li>
+        </ol>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+<Legend>{{ translate("General") }}</Legend>
+<form method="POST">
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" required name="title" class="form-control" placeholder="{{ translate("Title") }}" aria-describedby="basic-addon1">
+    </div>
+    <br />
+
+    <textarea required style="width: 100%;" id="editor" name="desc">
+        {{ translate("Whats the topic?") }}
+
+
+        {{ translate("Something extra to mention?") }}
+    </textarea>
+
+    <br />
+    <Legend>{{ translate("Time") }}</Legend>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="data_picker">
+                <input type="text" name="date" required class="form-control">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <select name="subject_select" id="subject_select">
+
+            </select>
+        </div>
+    </div>
+
+    <br />
+
+    <Legend>{{ translate("Related Tests") }}</Legend>
+    <div class="well" style="text-align:center;">
+        <div id="notice">{{ translate("Not in function yet") }}</div>
+    </div>
+
+    <div class="pull-left">
+        <input type="submit" class="btn btn-default" value="{{ translate("Create Test") }}" />
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-default" href="{{ url("studentui_calendar") }}">{{ translate("Cancel") }}</a>
+    </div>
+    <br />
+</form>
+
+
+<script>
+    var subject_array;
+
+    CKEDITOR.replace("editor", {
+        extraPlugins: 'bbcode,entities',
+        customConfig: 'config_add_homework.js'
+    });
+
+    var currentdate = new Date();
+
+    $('#data_picker input').datepicker({
+        date: currentdate,
+        format: 'dd.mm.yyyy'
+    });
+
+    $('#data_picker input').datepicker('update', currentdate);
+    loadsubjects(currentdate);
+
+    $('#subject_select').multiselect({
+        nonSelectedText: 'Choose first time',
+        buttonWidth: '100%'
+    });
+
+    $('#data_picker input').on("changeDate", function (e) {
+        loadsubjects(e.date);
+    });
+
+
+    function loadsubjects(date) {
+        var fd = new FormData();
+        fd.append( 'date', date );
+
+        $.ajax({
+            type: "POST",
+            url: '/api/ajax/subjects/list',
+            data: fd,
+            contentType: "application/json",
+            dataType: "application/json",
+            async: true,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                console.log("action");
+                $("#subject_select").multiselect('destroy');
+                $("#subject_select").empty();
+                $('#subject_select').multiselect({
+                    nonSelectedText: 'Choose first time',
+                    buttonWidth: '100%'
+                });
+                for (i = 0; i < data.subjects.length; i++) {
+                    $('#subject_select').append($('<option>', {
+                        value: data.subjects[i].subject_holder_id,
+                        text : data.subjects[i].name
+                    }));
+                }
+                $('#subject_select').multiselect('rebuild');
+            }
+        })
+    }
+</script>
